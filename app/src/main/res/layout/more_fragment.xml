@@ -6,8 +6,13 @@
     tools:context=".ui.home.more">
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:gravity="center"
+        android:text="MORE"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textStyle="bold" />
 
 </FrameLayout>

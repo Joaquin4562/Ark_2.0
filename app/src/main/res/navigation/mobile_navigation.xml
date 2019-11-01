@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_perfil">
 
     <fragment
         android:id="@+id/nav_home"
@@ -13,12 +13,12 @@
 
     <fragment
         android:id="@+id/nav_perfil"
-        android:name="com.example.ark_versiondos.ui.home.HomeFragment"
+        android:name="com.example.ark_versiondos.ui.home.Perfil"
         android:label="@string/menu_perfil"
         tools:layout="@layout/perfil_fragment" />
     <fragment
         android:id="@+id/nav_more"
-        android:name="com.example.ark_versiondos.ui.home.HomeFragment"
+        android:name="com.example.ark_versiondos.ui.home.more"
         android:label="@string/menu_more"
         tools:layout="@layout/more_fragment" />
 
