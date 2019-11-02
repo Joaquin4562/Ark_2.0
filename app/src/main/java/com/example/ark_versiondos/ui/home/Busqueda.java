@@ -1,22 +1,18 @@
-package com.example.ark_versiondos;
-
-import android.content.Context;
-import android.net.Uri;
+package com.example.ark_versiondos.ui.home;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import com.example.ark_versiondos.ui.home.HomeViewModel;
+import com.example.ark_versiondos.R;
+import com.example.ark_versiondos.RecyclerViewAdapter;
+import com.example.ark_versiondos.razaVacas;
 
 import java.util.ArrayList;
 import java.util.List;

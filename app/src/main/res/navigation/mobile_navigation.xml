@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_perfil">
+    app:startDestination="@+id/nav_home">
 
     <fragment
         android:id="@+id/nav_home"
@@ -21,5 +21,25 @@
         android:name="com.example.ark_versiondos.ui.home.more"
         android:label="@string/menu_more"
         tools:layout="@layout/more_fragment" />
+    <fragment
+        android:id="@+id/nav_comparar"
+        android:name="com.example.ark_versiondos.ui.home.Comparar"
+        android:label="@string/menu_Comparar"
+        tools:layout="@layout/comparar_fragment" />
+    <fragment
+        android:id="@+id/nav_galeria"
+        android:name="com.example.ark_versiondos.ui.home.Galeria"
+        android:label="@string/menu_Galeria"
+        tools:layout="@layout/galeria_fragment" />
+    <fragment
+        android:id="@+id/nav_mapa"
+        android:name="com.example.ark_versiondos.ui.home.mapa"
+        android:label="@string/menu_Mapa"
+        tools:layout="@layout/fragment_mapa" />
+    <fragment
+        android:id="@+id/nav_busqueda"
+        android:name="com.example.ark_versiondos.ui.home.Busqueda"
+        android:label="@string/menu_Busqueda"
+        tools:layout="@layout/fragment_busqueda" />
 
 </navigation>

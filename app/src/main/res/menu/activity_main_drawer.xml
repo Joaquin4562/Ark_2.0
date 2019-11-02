@@ -8,18 +8,40 @@
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home"
             android:title="@string/menu_home" />
+
         <item
-            android:id="@+id/nav_perfil"
-            android:icon="@drawable/ic_person_black"
-            android:title="@string/menu_perfil"
+            android:id="@+id/nav_busqueda"
+            android:icon="@drawable/ic_search"
+            android:title="@string/menu_Busqueda"
             />
+        <item
+            android:id="@+id/nav_comparar"
+            android:icon="@drawable/ic_compare"
+            android:title="@string/menu_Comparar"
+            />
+        <item
+            android:id="@+id/nav_mapa"
+            android:icon="@drawable/ic_person_black"
+            android:title="@string/menu_Mapa"
+            />
+
     </group>
 
     <item android:title="More">
         <menu>
             <item
-                android:id="@+id/nav_more"
+                android:id="@+id/nav_perfil"
                 android:icon="@drawable/ic_person_black"
+                android:title="@string/menu_perfil"
+                />
+            <item
+                android:id="@+id/nav_galeria"
+                android:icon="@drawable/ic_image"
+                android:title="@string/menu_Galeria"
+                />
+            <item
+                android:id="@+id/nav_more"
+                android:icon="@drawable/ic_more"
                 android:title="@string/menu_more"
                 />
         </menu>
