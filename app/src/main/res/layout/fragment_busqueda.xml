@@ -108,7 +108,6 @@
         android:id="@+id/lista_animales"
         android:layout_width="404dp"
         android:layout_height="494dp"
-        android:background="@drawable/round"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
