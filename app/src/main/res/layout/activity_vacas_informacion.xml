@@ -54,7 +54,7 @@
                         android:text="TextView"
                         android:textAlignment="viewEnd"
                         android:textSize="18sp"
-                        android:textStyle="italic" />
+                        android:textStyle="bold|italic" />
                 </LinearLayout>
 
                 <LinearLayout
