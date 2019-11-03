@@ -91,10 +91,11 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lista_animales"
-        android:layout_width="409dp"
-        android:layout_height="481dp"
+        android:layout_width="399dp"
+        android:layout_height="501dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.93" />
 </androidx.constraintlayout.widget.ConstraintLayout>

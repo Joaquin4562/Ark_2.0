@@ -27,7 +27,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.raza.setText(listaRazas.get(position).getNombre());
-        holder.descri.setText(listaRazas.get(position).getDescripcion());
+        holder.descri.setText(listaRazas.get(position).getPais());
         holder.foto_vaca.setImageResource(listaRazas.get(position).getFotoRaza());
         holder.ic_vaca.setImageResource(listaRazas.get(position).getIcon_vaca());
     }
@@ -42,11 +42,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         private ImageView foto_vaca;
         private ImageView ic_vaca;
 
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            raza=itemView.findViewById(R.id.raza_vaca);
+            descri=itemView.findViewById(R.id.pais_vaca);
+            foto_vaca=itemView.findViewById(R.id.img_vaca);
+            ic_vaca=itemView.findViewById(R.id.ic_vaca);
         }
-
 
     }
 }

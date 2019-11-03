@@ -20,9 +20,6 @@ public class razaVacas {
         return nombre;
     }
 
-    public String getDescripcion() {
-        return pais;
-    }
 
     public int getFotoRaza() {
         return fotoRaza;
@@ -30,10 +27,6 @@ public class razaVacas {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.pais = descripcion;
     }
 
     public void setFotoRaza(int fotoRaza) {
