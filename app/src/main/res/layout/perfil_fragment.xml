@@ -3,15 +3,4 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.Perfil">
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="PERFIL"
-        android:textAlignment="center"
-        android:textSize="36sp"
-        android:textStyle="bold" />
-</FrameLayout>
+    tools:context=".ui.home.Perfil"/>

@@ -10,13 +10,12 @@
         android:id="@+id/horizontalScrollView"
         android:layout_width="403dp"
         android:layout_height="95dp"
+        android:layout_marginTop="92dp"
         android:background="#F5F5F5"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.18">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -33,7 +32,11 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/round"
-                android:drawablePadding="40dp" />
+                android:drawablePadding="40dp"
+                android:drawableTintMode="src_in"
+                android:foreground="@drawable/ic_vaca"
+                android:foregroundTint="#001B3A04"
+                android:foregroundTintMode="add" />
 
             <Button
                 android:id="@+id/Borregos"
@@ -41,7 +44,10 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:background="@drawable/round"
-                android:drawablePadding="40dp" />
+                android:drawablePadding="40dp"
+                android:foreground="@drawable/ic_oveja"
+                android:foregroundTint="#001B3A04"
+                android:foregroundTintMode="add" />
 
             <Button
                 android:id="@+id/Cerdos"
@@ -49,7 +55,10 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:background="@drawable/round"
-                android:drawablePadding="40dp" />
+                android:drawablePadding="40dp"
+                android:foreground="@drawable/ic_cerdo"
+                android:foregroundTint="#001B3A04"
+                android:foregroundTintMode="add" />
 
             <Button
                 android:id="@+id/Caballos"
@@ -58,7 +67,10 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/round"
-                android:drawablePadding="40dp" />
+                android:drawablePadding="40dp"
+                android:foreground="@drawable/ic_caballo"
+                android:foregroundTint="#001B3A04"
+                android:foregroundTintMode="add" />
 
             <Button
                 android:id="@+id/Pollos"
@@ -67,7 +79,10 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/round"
-                android:drawablePadding="40dp" />
+                android:drawablePadding="40dp"
+                android:foreground="@drawable/ic_gallina"
+                android:foregroundTint="#001B3A04"
+                android:foregroundTintMode="add" />
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -75,6 +90,7 @@
         android:id="@+id/Buscar_EditText"
         android:layout_width="332dp"
         android:layout_height="56dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/oval"
         android:drawableLeft="@android:drawable/ic_menu_search"
         android:drawableTint="@android:color/black"
@@ -83,19 +99,17 @@
         android:inputType="textPersonName"
         android:textAlignment="center"
         android:textColorHint="#9C9B9B"
-        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.61" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lista_animales"
-        android:layout_width="399dp"
-        android:layout_height="501dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="404dp"
+        android:layout_height="494dp"
+        android:background="@drawable/round"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.93" />
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
