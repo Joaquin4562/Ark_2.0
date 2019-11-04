@@ -4,6 +4,188 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondoreg"
     tools:context=".Registro">
 
+    <Button
+        android:id="@+id/registrarse"
+        android:layout_width="277dp"
+        android:layout_height="49dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/fbotoni"
+        android:text="Registrarse"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="306dp"
+        android:layout_height="367dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.78">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/rcnombre"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/ftextoi"
+                android:drawableLeft="@drawable/dnombre"
+                android:ems="10"
+                android:hint="Nombre"
+                android:inputType="textPersonName"
+                android:textAlignment="inherit"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/biniciars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.766" />
+
+            <EditText
+                android:id="@+id/rcusuario"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/ftextoi"
+                android:drawableLeft="@drawable/dusuario"
+                android:ems="10"
+                android:hint="Usuario"
+                android:inputType="textPersonName"
+                android:textAlignment="inherit"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/biniciars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.766" />
+
+            <EditText
+                android:id="@+id/rccorreo"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/ftextoi"
+                android:drawableLeft="@drawable/dcorreo"
+                android:ems="10"
+                android:hint="Correo"
+                android:inputType="textPersonName"
+                android:textAlignment="inherit"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/biniciars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.766" />
+
+            <EditText
+                android:id="@+id/restado"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/ftextoi"
+                android:drawableLeft="@drawable/destado"
+                android:ems="10"
+                android:hint="Estado"
+                android:inputType="textPersonName"
+                android:textAlignment="inherit"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/biniciars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.766" />
+
+            <EditText
+                android:id="@+id/rciudad"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/ftextoi"
+                android:drawableLeft="@drawable/dciudad"
+                android:ems="10"
+                android:hint="Ciudad"
+                android:inputType="textPersonName"
+                android:textAlignment="inherit"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/biniciars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.766" />
+
+            <EditText
+                android:id="@+id/rctelefono"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/ftextoi"
+                android:drawableLeft="@drawable/dtelefono"
+                android:ems="10"
+                android:hint="teléfono"
+                android:inputType="phone"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/rcontraseña"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/ftextoi"
+                android:drawableLeft="@drawable/dcontrasena"
+                android:ems="10"
+                android:hint="Contraseña"
+                android:inputType="textPassword"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/biniciars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/usuario" />
+
+            <EditText
+                android:id="@+id/rrecucontraseña"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/ftextoi"
+                android:drawableLeft="@drawable/dcontrasena"
+                android:ems="10"
+                android:hint="Confirmar contraseña"
+                android:inputType="textPassword"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/biniciars"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/usuario" />
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/crearcuenta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crear cuenta"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.83" />
 </androidx.constraintlayout.widget.ConstraintLayout>

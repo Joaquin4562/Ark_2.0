@@ -1,18 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.home.more">
 
-    <TextView
-        android:id="@+id/textView3"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="MORE"
-        android:textAlignment="center"
-        android:textSize="36sp"
-        android:textStyle="bold" />
+        android:layout_height="615dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="¿Que es ARK?"
+                android:textAlignment="center"
+                android:textColor="#686868"
+                android:textSize="50sp" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="ARK es una aplicación que te permitirá buscar la mejor alternativa para el cruce de animales para la ganaderia, asi como tambien, te permitirá consultar la información especifica de los animales, esto ayudara a saber la temperatura que pueden soportar y distintos factores para saber cual es el mejor territorio para poder vivir"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@drawable/vacauno" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:text="La aplicación fue creada por:"
+                android:textColor="#000000"
+                android:textSize="30sp" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="365dp"
+                android:background="@drawable/ftextoi">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="Marco Antonio Nava"
+                        android:textColor="#686868"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="Ana Cristina de los Angeles"
+                        android:textColor="#686868"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="Luis Estrada Villegas"
+                        android:textColor="#686868"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="Gerardo Joaquin Martinez Hernandez"
+                        android:textColor="#686868"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="Luis Alberto Diaz "
+                        android:textColor="#686868"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="Idalia Balderas"
+                        android:textColor="#686868"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="Jesus Emmanuel De Leon Lerma"
+                        android:textColor="#686868"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="Miguel Edgardo Santiago Hernandez"
+                        android:textColor="#686868"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="Ernesto Almaraz Tinajero"
+                        android:textColor="#686868"
+                        android:textSize="24sp" />
+
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>

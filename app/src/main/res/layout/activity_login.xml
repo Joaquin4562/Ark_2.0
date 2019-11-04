@@ -4,6 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     tools:context=".Login">
+
+    <Button
+        android:id="@+id/biniciars"
+        android:layout_width="219dp"
+        android:layout_height="43dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/fbotoni"
+        android:text="Iniciar sesión"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.453"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.779" />
+
+    <Button
+        android:id="@+id/brecuperar"
+        android:layout_width="185dp"
+        android:layout_height="16dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/recuperar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/biniciars"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/bregistrar"
+        android:layout_width="243dp"
+        android:layout_height="17dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/registrar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/brecuperar"
+        app:layout_constraintVertical_bias="0.764" />
+
+    <EditText
+        android:id="@+id/usuario"
+        android:layout_width="319dp"
+        android:layout_height="38dp"
+        android:background="@drawable/ftextoi"
+        android:drawableLeft="@drawable/dusuario"
+        android:ems="10"
+        android:hint="Usuario"
+        android:inputType="textPersonName"
+        android:textAlignment="inherit"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/biniciars"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.82" />
+
+    <EditText
+        android:id="@+id/contraseña"
+        android:layout_width="319dp"
+        android:layout_height="38dp"
+        android:background="@drawable/ftextoi"
+        android:drawableLeft="@drawable/dcontrasena"
+        android:ems="10"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/biniciars"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usuario"
+        app:layout_constraintVertical_bias="0.58000004" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
