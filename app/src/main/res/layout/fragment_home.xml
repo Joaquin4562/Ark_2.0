@@ -5,6 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <EditText
+        android:id="@+id/buscar_EditText"
+        android:layout_width="332dp"
+        android:layout_height="56dp"
+        android:background="@drawable/oval"
+        android:drawableLeft="@android:drawable/ic_menu_search"
+        android:drawableTint="@android:color/black"
+        android:ems="10"
+        android:hint="BUSCAR"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColorHint="#9C9B9B"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.82" />
+
     <TextView
         android:id="@+id/bienvenido"
         android:layout_width="wrap_content"
@@ -24,22 +43,23 @@
         android:id="@+id/bienvenido2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
         android:text="@USUARIO"
         android:textAlignment="center"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.08" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
-        android:layout_width="406dp"
-        android:layout_height="582dp"
+        android:id="@+id/scrollView2"
+        android:layout_width="375dp"
+        android:layout_height="409dp"
+        android:layout_marginTop="92dp"
         android:background="@drawable/round_2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bienvenido2">
 
