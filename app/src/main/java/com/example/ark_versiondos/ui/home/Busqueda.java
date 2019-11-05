@@ -23,11 +23,10 @@ import java.util.List;
 public class Busqueda extends Fragment {
     RecyclerView recyclerView;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_busqueda, container, false);
-        recyclerView = root.findViewById(R.id.lista_animales);
 
+        recyclerView = root.findViewById(R.id.lista_animales);
         recyclerView.setAdapter(new RecyclerViewAdapter(obtenerRazas()));
         recyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
         return root;

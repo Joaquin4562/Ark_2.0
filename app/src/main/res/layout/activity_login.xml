@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo"
+    android:background="@drawable/fondologin"
     tools:context=".Login">
 
     <Button
@@ -13,7 +13,8 @@
         android:layout_height="43dp"
         android:layout_margin="20dp"
         android:background="@drawable/fbotoni"
-        android:text="Iniciar sesión"
+        android:onClick="Iniciar"
+        android:text="@string/iniciar_sesi_n"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="14sp"
@@ -30,6 +31,7 @@
         android:layout_height="16dp"
         android:layout_margin="20dp"
         android:background="@drawable/recuperar"
+        android:onClick="Acceder_C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.45"
@@ -43,6 +45,7 @@
         android:layout_height="17dp"
         android:layout_margin="20dp"
         android:background="@drawable/registrar"
+        android:onClick="Acceder_R"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -57,7 +60,7 @@
         android:background="@drawable/ftextoi"
         android:drawableLeft="@drawable/dusuario"
         android:ems="10"
-        android:hint="Usuario"
+        android:hint="@string/usuario"
         android:inputType="textPersonName"
         android:textAlignment="inherit"
         android:textSize="14sp"
@@ -65,7 +68,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.73" />
+        app:layout_constraintVertical_bias="0.73"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/contraseña"
@@ -74,20 +78,21 @@
         android:background="@drawable/ftextoi"
         android:drawableLeft="@drawable/dcontrasena"
         android:ems="10"
-        android:hint="Contraseña"
+        android:hint="@string/contrase_a"
         android:inputType="textPassword"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/biniciars"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/usuario"
-        app:layout_constraintVertical_bias="0.33999997" />
+        app:layout_constraintVertical_bias="0.33999997"
+        android:importantForAutofill="no" />
 
     <CheckBox
         android:id="@+id/recordar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Recordarme"
+        android:text="@string/recordarme"
         app:layout_constraintBottom_toTopOf="@+id/biniciars"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.16"

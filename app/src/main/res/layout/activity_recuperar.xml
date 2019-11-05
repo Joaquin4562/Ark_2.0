@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/recucontra"
+    android:background="@drawable/fondorecu"
     tools:context=".Recuperar">
 
     <ScrollView
@@ -31,7 +31,7 @@
                 android:background="@drawable/ftextoi"
                 android:drawableLeft="@drawable/dcorreo"
                 android:ems="10"
-                android:hint="Correo"
+                android:hint="@string/correo"
                 android:inputType="textPersonName"
                 android:textAlignment="inherit"
                 android:textSize="14sp"
@@ -39,7 +39,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.766" />
+                app:layout_constraintVertical_bias="0.766"
+                android:importantForAutofill="no" />
 
         </LinearLayout>
     </ScrollView>
@@ -50,7 +51,7 @@
         android:layout_height="45dp"
         android:layout_margin="20dp"
         android:background="@drawable/fbotoni"
-        android:text="Recuperar contraseña"
+        android:text="@string/recuperar_contrase_a"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="14sp"

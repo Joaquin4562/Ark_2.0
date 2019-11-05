@@ -1,12 +1,582 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.Comparar">
+    tools:context=".ui.home.Perfil">
 
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView2"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scrollView4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <SearchView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1" />
+
+                    <SearchView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="1" />
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp">
+
+                    <Button
+                        android:id="@+id/button7"
+                        android:layout_width="126dp"
+                        android:layout_height="34dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/fbotoni"
+                        android:text="Buscar"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.133"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/button8"
+                        android:layout_width="126dp"
+                        android:layout_height="34dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/fbotoni"
+                        android:text="Buscar"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.89"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.555" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ftextoi"
+                    android:orientation="horizontal">
+
+                    <ListView
+                        android:layout_width="209dp"
+                        android:layout_height="228dp" />
+
+                    <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="77dp">
+
+                    <Button
+                        android:id="@+id/button3"
+                        android:layout_width="220dp"
+                        android:layout_height="44dp"
+                        android:background="@drawable/fbotoni"
+                        android:fontFamily="sans-serif"
+                        android:selectAllOnFocus="false"
+                        android:text="@string/menu_Comparar"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/icomuno" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/icomdos" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#48FFFFFF">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginTop="15dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/ftextoii"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/raza"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:fontFamily="sans-serif"
+                                            android:text="Raza:"
+                                            android:textColor="#000000"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:id="@+id/textView70"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:fontFamily="sans-serif"
+                                            android:text="TextView"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/longevidad"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="sans-serif"
+                                            android:text="Longevidad:"
+                                            android:textColor="#000000"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:id="@+id/textView71"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:fontFamily="sans-serif"
+                                            android:text="TextView"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/tempmax"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="sans-serif"
+                                            android:text="Temperatura maxima:"
+                                            android:textColor="#000000"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:id="@+id/textView72"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:fontFamily="sans-serif"
+                                            android:text="TextView"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/tempmin"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="sans-serif"
+                                            android:text="Temperatura minima:"
+                                            android:textColor="#000000"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:id="@+id/textView73"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:fontFamily="sans-serif"
+                                            android:text="TextView"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/pesoP"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="sans-serif"
+                                            android:text="Peso promedio:"
+                                            android:textColor="#000000"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:id="@+id/textView74"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:fontFamily="sans-serif"
+                                            android:text="TextView"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/litrosLeche"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="sans-serif"
+                                            android:text="Litros de leche al año:"
+                                            android:textColor="#000000"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:id="@+id/textView75"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:fontFamily="sans-serif"
+                                            android:text="TextView"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/crias"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="sans-serif"
+                                            android:text="Crias en vida productiva:"
+                                            android:textColor="#000000"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:id="@+id/textView76"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:fontFamily="sans-serif"
+                                            android:text="TextView"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/periodoGestacion"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="sans-serif"
+                                            android:text="Periodo de gestacion:"
+                                            android:textColor="#000000"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:id="@+id/textView77"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:fontFamily="sans-serif"
+                                            android:text="TextView"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/calidadLeche"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_weight="1"
+                                            android:fontFamily="sans-serif"
+                                            android:text="Calidad de leche:"
+                                            android:textColor="#000000"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:id="@+id/textView78"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:fontFamily="sans-serif"
+                                            android:text="TextView"
+                                            android:textStyle="bold" />
+
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="206dp"
+                                        android:layout_height="400dp"
+                                        android:layout_marginLeft="5dp"
+                                        android:background="@drawable/ftextoii"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/raza2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:text="Raza:"
+                                            android:textColor="#000000"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:id="@+id/textView79"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:text="TextView"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/longevidad2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_weight="1"
+                                            android:text="Longevidad:"
+                                            android:textColor="#000000"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:id="@+id/textView80"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:text="TextView"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/tempmax2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_weight="1"
+                                            android:text="Temperatura maxima:"
+                                            android:textColor="#000000"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:id="@+id/textView81"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:text="TextView"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/tempmin2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_weight="1"
+                                            android:text="Temperatura minima:"
+                                            android:textColor="#000000"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:id="@+id/textView82"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:text="TextView"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/pesoP2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_weight="1"
+                                            android:text="Peso promedio:"
+                                            android:textColor="#000000"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:id="@+id/textView83"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:text="TextView"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/litrosLeche2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_weight="1"
+                                            android:text="Litros de leche al año:"
+                                            android:textColor="#000000"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:id="@+id/textView84"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:text="TextView"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/crias2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_weight="1"
+                                            android:text="Crias en vida productiva:"
+                                            android:textColor="#000000"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:id="@+id/textView85"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:text="TextView"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/periodoGestacion2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_weight="1"
+                                            android:text="Periodo de gestacion:"
+                                            android:textColor="#000000"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:id="@+id/textView86"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:text="TextView"
+                                            android:textStyle="bold" />
+
+                                        <TextView
+                                            android:id="@+id/calidadLeche2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_weight="1"
+                                            android:text="Calidad de leche:"
+                                            android:textColor="#000000"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:id="@+id/textView87"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:text="TextView"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </ScrollView>
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp">
+
+                    <Button
+                        android:id="@+id/button5"
+                        android:layout_width="202dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/fbotoni"
+                        android:text="Hacer otra comparación"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>
