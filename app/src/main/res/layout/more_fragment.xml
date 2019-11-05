@@ -36,7 +36,7 @@
                 android:id="@+id/button2"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:background="@drawable/vacauno" />
+                android:background="@drawable/vacaa" />
 
             <TextView
                 android:id="@+id/textView10"

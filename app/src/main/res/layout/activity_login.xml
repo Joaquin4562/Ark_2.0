@@ -22,7 +22,7 @@
         app:layout_constraintHorizontal_bias="0.453"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.779" />
+        app:layout_constraintVertical_bias="0.82" />
 
     <Button
         android:id="@+id/brecuperar"
@@ -65,7 +65,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.82" />
+        app:layout_constraintVertical_bias="0.73" />
 
     <EditText
         android:id="@+id/contraseña"
@@ -81,6 +81,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/usuario"
-        app:layout_constraintVertical_bias="0.58000004" />
+        app:layout_constraintVertical_bias="0.33999997" />
+
+    <CheckBox
+        android:id="@+id/recordar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recordarme"
+        app:layout_constraintBottom_toTopOf="@+id/biniciars"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contraseña" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
