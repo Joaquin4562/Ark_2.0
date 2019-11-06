@@ -32,15 +32,15 @@
                 android:drawableLeft="@drawable/dcorreo"
                 android:ems="10"
                 android:hint="@string/correo"
+                android:importantForAutofill="no"
                 android:inputType="textPersonName"
-                android:textAlignment="inherit"
+                android:textAlignment="center"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toTopOf="@+id/biniciars"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.766"
-                android:importantForAutofill="no" />
+                app:layout_constraintVertical_bias="0.766" />
 
         </LinearLayout>
     </ScrollView>

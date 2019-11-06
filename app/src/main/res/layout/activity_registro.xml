@@ -48,15 +48,15 @@
                 android:drawableLeft="@drawable/dnombre"
                 android:ems="10"
                 android:hint="@string/nombre"
+                android:importantForAutofill="no"
                 android:inputType="textPersonName"
-                android:textAlignment="inherit"
+                android:textAlignment="center"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toTopOf="@+id/biniciars"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.766"
-                android:importantForAutofill="no" />
+                app:layout_constraintVertical_bias="0.766" />
 
             <EditText
                 android:id="@+id/rcusuario"
@@ -67,15 +67,15 @@
                 android:drawableLeft="@drawable/dusuario"
                 android:ems="10"
                 android:hint="@string/usuario"
+                android:importantForAutofill="no"
                 android:inputType="textPersonName"
-                android:textAlignment="inherit"
+                android:textAlignment="center"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toTopOf="@+id/biniciars"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.766"
-                android:importantForAutofill="no" />
+                app:layout_constraintVertical_bias="0.766" />
 
             <EditText
                 android:id="@+id/rccorreo"
@@ -86,15 +86,15 @@
                 android:drawableLeft="@drawable/dcorreo"
                 android:ems="10"
                 android:hint="@string/correo"
+                android:importantForAutofill="no"
                 android:inputType="textPersonName"
-                android:textAlignment="inherit"
+                android:textAlignment="center"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toTopOf="@+id/biniciars"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.766"
-                android:importantForAutofill="no" />
+                app:layout_constraintVertical_bias="0.766" />
 
             <EditText
                 android:id="@+id/restado"
@@ -105,15 +105,15 @@
                 android:drawableLeft="@drawable/destado"
                 android:ems="10"
                 android:hint="@string/estado"
+                android:importantForAutofill="no"
                 android:inputType="textPersonName"
-                android:textAlignment="inherit"
+                android:textAlignment="center"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toTopOf="@+id/biniciars"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.766"
-                android:importantForAutofill="no" />
+                app:layout_constraintVertical_bias="0.766" />
 
             <EditText
                 android:id="@+id/rciudad"
@@ -124,15 +124,15 @@
                 android:drawableLeft="@drawable/dciudad"
                 android:ems="10"
                 android:hint="@string/ciudad"
+                android:importantForAutofill="no"
                 android:inputType="textPersonName"
-                android:textAlignment="inherit"
+                android:textAlignment="center"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toTopOf="@+id/biniciars"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.766"
-                android:importantForAutofill="no" />
+                app:layout_constraintVertical_bias="0.766" />
 
             <EditText
                 android:id="@+id/rctelefono"
@@ -143,9 +143,10 @@
                 android:drawableLeft="@drawable/dtelefono"
                 android:ems="10"
                 android:hint="@string/tel_fono"
+                android:importantForAutofill="no"
                 android:inputType="phone"
-                android:textSize="14sp"
-                android:importantForAutofill="no" />
+                android:textAlignment="center"
+                android:textSize="14sp" />
 
             <EditText
                 android:id="@+id/rcontraseña"
@@ -156,13 +157,14 @@
                 android:drawableLeft="@drawable/dcontrasena"
                 android:ems="10"
                 android:hint="@string/contrase_a"
+                android:importantForAutofill="no"
                 android:inputType="textPassword"
+                android:textAlignment="center"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toTopOf="@+id/biniciars"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/usuario"
-                android:importantForAutofill="no" />
+                app:layout_constraintTop_toBottomOf="@+id/usuario" />
 
             <EditText
                 android:id="@+id/rrecucontraseña"
@@ -173,13 +175,14 @@
                 android:drawableLeft="@drawable/dcontrasena"
                 android:ems="10"
                 android:hint="@string/confirmar_contrase_a"
+                android:importantForAutofill="no"
                 android:inputType="textPassword"
+                android:textAlignment="center"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toTopOf="@+id/biniciars"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/usuario"
-                android:importantForAutofill="no" />
+                app:layout_constraintTop_toBottomOf="@+id/usuario" />
         </LinearLayout>
     </ScrollView>
 

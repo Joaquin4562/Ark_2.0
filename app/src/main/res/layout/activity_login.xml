@@ -20,7 +20,6 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.453"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.82" />
@@ -61,15 +60,15 @@
         android:drawableLeft="@drawable/dusuario"
         android:ems="10"
         android:hint="@string/usuario"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
-        android:textAlignment="inherit"
+        android:textAlignment="center"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/biniciars"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.73"
-        android:importantForAutofill="no" />
+        app:layout_constraintVertical_bias="0.73" />
 
     <EditText
         android:id="@+id/contraseña"
@@ -79,20 +78,22 @@
         android:drawableLeft="@drawable/dcontrasena"
         android:ems="10"
         android:hint="@string/contrase_a"
+        android:importantForAutofill="no"
         android:inputType="textPassword"
+        android:textAlignment="center"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/biniciars"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/usuario"
-        app:layout_constraintVertical_bias="0.33999997"
-        android:importantForAutofill="no" />
+        app:layout_constraintVertical_bias="0.33999997" />
 
     <CheckBox
         android:id="@+id/recordar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/recordarme"
+        android:textColor="#686868"
         app:layout_constraintBottom_toTopOf="@+id/biniciars"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.16"
