@@ -61,9 +61,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
+                    android:inputType="textPersonName"
                     android:layout_marginBottom="10dp"
                     android:text="Jesus Emmanuel"
-                    android:textColor="#FFFEFE"
                     android:textSize="18sp" />
 
                 <TextView
@@ -80,10 +80,10 @@
                     android:id="@+id/usuario"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="10dp"
                     android:text="JesusMonoDL"
-                    android:textColor="#FFFEFE"
                     android:textSize="18sp" />
 
                 <TextView
@@ -101,9 +101,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
+                    android:inputType="textPersonName"
                     android:layout_marginBottom="10dp"
                     android:text="deleon.lerma.17163@itsmante.edu.mx"
-                    android:textColor="#FFFEFE"
                     android:textSize="18sp" />
 
                 <TextView
@@ -122,8 +122,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="10dp"
+                    android:inputType="textPersonName"
                     android:text="Tamaulipas"
-                    android:textColor="#FFFEFE"
                     android:textSize="18sp" />
 
                 <TextView
@@ -140,10 +140,10 @@
                     android:id="@+id/ciudad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="10dp"
                     android:text="El Mante"
-                    android:textColor="#FFFEFE"
                     android:textSize="18sp" />
 
                 <TextView
@@ -159,11 +159,11 @@
                 <EditText
                     android:id="@+id/telefono"
                     android:layout_width="match_parent"
+                    android:inputType="textPersonName"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="10dp"
                     android:text="8312542110"
-                    android:textColor="#FFFEFE"
                     android:textSize="18sp" />
 
             </LinearLayout>
