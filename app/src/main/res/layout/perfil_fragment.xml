@@ -10,177 +10,153 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="416dp"
-            android:layout_height="46dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@+id/textView3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.060000002">
-
-            <Button
-                android:id="@+id/btGuardar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/fperfilp"
-                android:text="GUARDAR" />
-
-        </LinearLayout>
-
         <ScrollView
-            android:id="@+id/scrollView3"
-            android:layout_width="409dp"
-            android:layout_height="594dp"
-            android:layout_marginTop="110dp"
-            android:background="@drawable/fperfilp_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView40"
+                <ImageView
+                    android:id="@+id/fotop"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:drawableLeft="@drawable/dnombre"
-                    android:text="Nombre:"
-                    android:textSize="18sp"
-                    android:textStyle="bold|italic" />
+                    android:layout_height="145dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/fondoop"
+                    android:padding="20dp"
+                    android:src="@drawable/perfil" />
 
-                <EditText
-                    android:id="@+id/nombre"
+                <TextView
+                    android:id="@+id/textView4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:inputType="textPersonName"
                     android:layout_marginBottom="10dp"
                     android:text="Jesus Emmanuel"
+                    android:textAlignment="center"
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/textView39"
+                    android:id="@+id/textView3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="#686868"
+                    android:text="Información del usuario"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <EditText
+                    android:id="@+id/editText3"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/ftextoi"
+                    android:drawableLeft="@drawable/dnombre"
+                    android:ems="10"
+                    android:hint="Nombre"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/editText4"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/ftextoi"
                     android:drawableLeft="@drawable/dusuario"
-                    android:text="Usuario:"
-                    android:textSize="18sp"
-                    android:textStyle="bold|italic" />
+                    android:ems="10"
+                    android:hint="Usuario"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center" />
 
                 <EditText
-                    android:id="@+id/usuario"
+                    android:id="@+id/editText5"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:layout_marginLeft="10dp"
+                    android:layout_height="43dp"
                     android:layout_marginBottom="10dp"
-                    android:text="JesusMonoDL"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/textView35"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/ftextoi"
                     android:drawableLeft="@drawable/dcorreo"
-                    android:text="Correo:"
-                    android:textSize="18sp"
-                    android:textStyle="bold|italic" />
+                    android:ems="10"
+                    android:hint="Correo"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center" />
 
                 <EditText
-                    android:id="@+id/correo"
+                    android:id="@+id/editText6"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:inputType="textPersonName"
+                    android:layout_height="43dp"
                     android:layout_marginBottom="10dp"
-                    android:text="deleon.lerma.17163@itsmante.edu.mx"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/textView36"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/ftextoi"
                     android:drawableLeft="@drawable/destado"
-                    android:text="Estado:"
-                    android:textSize="18sp"
-                    android:textStyle="bold|italic" />
+                    android:ems="10"
+                    android:hint="Estado"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center" />
 
                 <EditText
-                    android:id="@+id/estado"
+                    android:id="@+id/editText7"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_height="43dp"
                     android:layout_marginBottom="10dp"
-                    android:inputType="textPersonName"
-                    android:text="Tamaulipas"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/textView37"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/ftextoi"
                     android:drawableLeft="@drawable/dciudad"
-                    android:text="Ciudad:"
-                    android:textSize="18sp"
-                    android:textStyle="bold|italic" />
+                    android:ems="10"
+                    android:hint="Ciudad"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center" />
 
                 <EditText
-                    android:id="@+id/ciudad"
+                    android:id="@+id/editText8"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:layout_marginLeft="10dp"
+                    android:layout_height="43dp"
                     android:layout_marginBottom="10dp"
-                    android:text="El Mante"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/textView38"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/ftextoi"
                     android:drawableLeft="@drawable/dtelefono"
-                    android:text="Teléfono:"
-                    android:textSize="18sp"
-                    android:textStyle="bold|italic" />
+                    android:ems="10"
+                    android:hint="Teléfono"
+                    android:inputType="phone"
+                    android:textAlignment="center" />
 
                 <EditText
-                    android:id="@+id/telefono"
+                    android:id="@+id/editText9"
                     android:layout_width="match_parent"
-                    android:inputType="textPersonName"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="8312542110"
-                    android:textSize="18sp" />
+                    android:layout_height="43dp"
+                    android:background="@drawable/ftextoi"
+                    android:drawableLeft="@drawable/dcontrasena"
+                    android:ems="10"
+                    android:hint="Contraseña"
+                    android:inputType="textPassword"
+                    android:textAlignment="center" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="82dp">
+
+                    <Button
+                        android:id="@+id/btGuardar"
+                        android:layout_width="238dp"
+                        android:layout_height="47dp"
+                        android:background="@drawable/fbotoni"
+                        android:text="Guardar"
+                        android:textAllCaps="false"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </LinearLayout>
         </ScrollView>
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#686868"
-            android:text="Información del usuario"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/scrollView3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

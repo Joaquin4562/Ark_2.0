@@ -2,16 +2,16 @@ package com.example.ark_versiondos;
 
 public class razaVacas {
     private String nombre;
-    private String pais;
+    private String especialidad;
     private int fotoRaza;
     private int icon_vaca;
 
     public razaVacas() {
     }
 
-    public razaVacas(String nombre, String pais, int fotoRaza,int icono) {
+    public razaVacas(String nombre, String especialidad, int fotoRaza,int icono) {
         this.nombre = nombre;
-        this.pais = pais;
+        this.especialidad = especialidad;
         this.fotoRaza = fotoRaza;
         this.icon_vaca=icono;
     }
@@ -19,7 +19,6 @@ public class razaVacas {
     public String getNombre() {
         return nombre;
     }
-
 
     public int getFotoRaza() {
         return fotoRaza;
@@ -33,12 +32,12 @@ public class razaVacas {
         this.fotoRaza = fotoRaza;
     }
 
-    public String getPais() {
-        return pais;
+    public String getEspecialidad() {
+        return especialidad;
     }
 
-    public void setPais(String pais) {
-        this.pais = pais;
+    public void setEspecialidad(String pais) {
+        this.especialidad = pais;
     }
 
     public int getIcon_vaca() {

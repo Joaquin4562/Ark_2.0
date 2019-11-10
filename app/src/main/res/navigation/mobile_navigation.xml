@@ -33,9 +33,9 @@
         tools:layout="@layout/galeria_fragment" />
     <fragment
         android:id="@+id/nav_mapa"
-        android:name="com.example.ark_versiondos.ui.home.mapa"
+        android:name="com.example.ark_versiondos.Mapa"
         android:label="@string/menu_Mapa"
-        tools:layout="@layout/fragment_mapa" />
+        />
     <fragment
         android:id="@+id/nav_busqueda"
         android:name="com.example.ark_versiondos.ui.home.Busqueda"

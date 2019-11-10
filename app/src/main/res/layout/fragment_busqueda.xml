@@ -6,16 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.Busqueda">
 
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecciona el animal"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Filtrar por raza"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+        app:layout_constraintVertical_bias="0.772" />
+
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
-        android:layout_width="403dp"
+        android:layout_width="0dp"
         android:layout_height="95dp"
-        android:layout_marginTop="92dp"
         android:background="#F5F5F5"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.047">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -83,32 +109,96 @@
                 android:foreground="@drawable/ic_gallina"
                 android:foregroundTint="#001B3A04"
                 android:foregroundTintMode="add" />
+
         </LinearLayout>
     </HorizontalScrollView>
 
-    <EditText
-        android:id="@+id/Buscar_EditText"
-        android:layout_width="332dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/oval"
-        android:drawableLeft="@android:drawable/ic_menu_search"
-        android:drawableTint="@android:color/black"
-        android:ems="10"
-        android:hint="BUSCAR"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textColorHint="#9C9B9B"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lista_animales"
-        android:layout_width="404dp"
-        android:layout_height="494dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/ftextoi"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.222" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+        app:layout_constraintVertical_bias="0.071">
+
+        <EditText
+            android:id="@+id/etBuscar"
+            android:layout_width="190dp"
+            android:layout_height="44dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/ftextoi"
+            android:drawableLeft="@drawable/ic_search"
+            android:hint="Buscar"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/send"
+            android:layout_width="69dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/fbotoni"
+            android:text="Buscar"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="68dp"
+            android:layout_height="36dp"
+            android:background="@drawable/fbotoni"
+            android:text="Reset"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/lista_animales"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <Spinner
+            android:id="@+id/spEsp"
+            android:layout_width="180dp"
+            android:layout_height="24dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/ftextoii"
+            android:backgroundTint="#00F5F5F5"
+            android:entries="@array/esps"
+            android:textAlignment="center" />
+
+        <Spinner
+            android:id="@+id/spTemp"
+            android:layout_width="167dp"
+            android:layout_height="24dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/ftextoii"
+            android:backgroundTint="#00F8F6F6"
+            android:entries="@array/temps"
+            android:textAlignment="center" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

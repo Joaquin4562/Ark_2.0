@@ -61,7 +61,7 @@
             app:layout_constraintGuide_begin="387dp" />
 
         <TextView
-            android:id="@+id/raza_vaca"
+            android:id="@+id/tvRaza_vaca"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="PARDO SUIZA"
@@ -74,10 +74,10 @@
             app:layout_constraintVertical_bias="0.145" />
 
         <TextView
-            android:id="@+id/pais_vaca"
+            android:id="@+id/tvEsp_vaca"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mexico"
+            android:text="Carne"
             android:textAlignment="center"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline2"
@@ -87,7 +87,7 @@
             app:layout_constraintVertical_bias="0.496" />
 
         <ImageView
-            android:id="@+id/img_vaca"
+            android:id="@+id/iv_vaca"
             android:layout_width="75dp"
             android:layout_height="75dp"
             android:layout_margin="5dp"
@@ -100,7 +100,7 @@
             app:srcCompat="@mipmap/ic_launcher" />
 
         <ImageView
-            android:id="@+id/ic_vaca"
+            android:id="@+id/ivIcon_vaca"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@+id/guideline2"

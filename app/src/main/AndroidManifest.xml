@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ark_versiondos">
+<uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -9,20 +10,24 @@
         android:roundIcon="@mipmap/logoark_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:label="@string/title_activity_maps2" android:name=".Mapa"/>
         <activity android:name=".Recuperar"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="reversePortrait"></activity>
 
         <activity android:name=".Vacas_informacion"
+            android:screenOrientation="reversePortrait"
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity android:name=".Registro"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="reversePortrait"></activity>
 
         <activity
             android:name=".Splash"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="reversePortrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -30,11 +35,14 @@
         </activity>
 
         <activity android:name=".Login"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="reversePortrait"></activity>
 
         <activity android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="reversePortrait"></activity>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/google_maps_key"/>
     </application>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
 </manifest>

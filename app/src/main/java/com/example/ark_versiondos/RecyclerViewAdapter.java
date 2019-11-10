@@ -1,5 +1,6 @@
 package com.example.ark_versiondos;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,11 +12,42 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
-    List<razaVacas> listaRazas;
+    public List<razaVacas> listaRazas;
+    private Context context;
 
-    public RecyclerViewAdapter(List<razaVacas> listaRazas) {
+    private RecyclerView recyclerView;
+    private static RecyclerViewOnItemClickListener recyclerViewOnItemClickListener;
+
+
+    public RecyclerViewAdapter(List<razaVacas> listaRazas,  @NonNull RecyclerViewOnItemClickListener recyclerViewOnItemClickListener) {
+        this.recyclerViewOnItemClickListener = recyclerViewOnItemClickListener;
         this.listaRazas = listaRazas;
     }
+
+    public RecyclerViewAdapter( List<razaVacas> listaRazas) {
+
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        private TextView raza, descri;
+        private ImageView foto_vaca;
+        private ImageView ic_vaca;
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            raza=itemView.findViewById(R.id.tvRaza_vaca);
+            descri=itemView.findViewById(R.id.tvEsp_vaca);
+            foto_vaca=itemView.findViewById(R.id.iv_vaca);
+            ic_vaca=itemView.findViewById(R.id.ivIcon_vaca);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            recyclerViewOnItemClickListener.onClick(view, getAdapterPosition());
+        }
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -27,7 +59,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.raza.setText(listaRazas.get(position).getNombre());
-        holder.descri.setText(listaRazas.get(position).getPais());
+        holder.descri.setText(listaRazas.get(position).getEspecialidad());
         holder.foto_vaca.setImageResource(listaRazas.get(position).getFotoRaza());
         holder.ic_vaca.setImageResource(listaRazas.get(position).getIcon_vaca());
     }
@@ -37,18 +69,5 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return listaRazas.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView raza, descri;
-        private ImageView foto_vaca;
-        private ImageView ic_vaca;
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            raza=itemView.findViewById(R.id.raza_vaca);
-            descri=itemView.findViewById(R.id.pais_vaca);
-            foto_vaca=itemView.findViewById(R.id.img_vaca);
-            ic_vaca=itemView.findViewById(R.id.ic_vaca);
-        }
-
-    }
 }

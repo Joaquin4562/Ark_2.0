@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondologin"
+    android:background="@drawable/piin"
     tools:context=".Login">
 
     <Button
@@ -99,5 +99,15 @@
         app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contraseña" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="264dp"
+        android:layout_height="20dp"
+        android:background="@drawable/linea"
+        app:layout_constraintBottom_toTopOf="@+id/bregistrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/brecuperar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
