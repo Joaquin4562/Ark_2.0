@@ -41,7 +41,8 @@
         <activity android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="reversePortrait"></activity>
-        <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/google_maps_key"/>
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyA43k34sOMyzltN557WwJJusyM2cpNTWyI"/>
     </application>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 

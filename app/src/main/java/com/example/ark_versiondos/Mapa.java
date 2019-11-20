@@ -8,23 +8,26 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-
+import com.google.android.gms.maps.model.Marker;
 public class Mapa extends FragmentActivity implements OnMapReadyCallback {
 
-    private GoogleMap mMap;
+    private GoogleMap mMap, googleM;
+    private Marker markp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps2);
+        setContentView(R.layout.fragment_mapa);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
     }
+
+
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -39,16 +42,19 @@ public class Mapa extends FragmentActivity implements OnMapReadyCallback {
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng SimbrahTexas = new LatLng(31.8160381, -99.5120986);
-        mMap.addMarker(new MarkerOptions().position(SimbrahTexas).title("Simbrah").snippet("Orginaria de Texas, EEUU").icon(BitmapDescriptorFactory.fromResource(R.drawable.iconolocation)));
+        LatLng pardo = new LatLng(46.7985624, 8.2319736);
+        mMap.addMarker(new MarkerOptions().position(pardo).title("Pardo Suizo").snippet("Gran docilidad, lo que facilita su manejo"));
 
-        LatLng PardoAlpesSuizos = new LatLng(46.416667, 10);
-        mMap.addMarker(new MarkerOptions().position(PardoAlpesSuizos).title("Pardo Suizo").snippet("Orginaria de Alpes, Suiza").icon(BitmapDescriptorFactory.fromResource(R.drawable.iconolocation)));
+        LatLng brahman = new LatLng(39.7837304, -100.4458825);
+        mMap.addMarker(new MarkerOptions().position(brahman).title("Brahman").snippet("UTILIZADA COMO HERRAMIENTA PARA PRODUCIR CARNE"));
 
-        LatLng Brahman = new LatLng(20.5936832, 78.962883);
-        mMap.addMarker(new MarkerOptions().position(Brahman).title("Brahman").snippet("Orginaria de la India").icon(BitmapDescriptorFactory.fromResource(R.drawable.iconolocation)));
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(SimbrahTexas));
+        LatLng simbrah = new LatLng(27.96902519476781, -100.08389412633177);
+        mMap.addMarker(new MarkerOptions().position(simbrah).title("Simbrah").snippet("100% de adaptación a cualquier tipo de clima debido a su rusticidad."));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(simbrah, 4));
+
+
     }
+
 }
 

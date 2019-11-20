@@ -5,31 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/bienvenido"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/mapas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Bienvenido"
-        android:textAlignment="center"
-        android:textSize="36sp"
-        android:textStyle="bold"
+
+        android:foreground="@drawable/ic_map"
+        app:backgroundTint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.89"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.01" />
+        app:layout_constraintVertical_bias="0.87" />
 
 
     <WebView
         android:id="@+id/wv1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bienvenido" />
+
+         />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

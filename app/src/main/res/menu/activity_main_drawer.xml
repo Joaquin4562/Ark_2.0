@@ -19,11 +19,6 @@
             android:icon="@drawable/ic_compare"
             android:title="@string/menu_Comparar"
             />
-        <item
-            android:id="@+id/nav_mapa"
-            android:icon="@drawable/ic_map"
-            android:title="@string/menu_Mapa"
-            />
 
     </group>
 

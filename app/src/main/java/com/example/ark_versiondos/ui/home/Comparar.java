@@ -17,14 +17,6 @@ import com.example.ark_versiondos.R;
 
 public class Comparar extends Fragment {
 
-    private CompararViewModel mViewModel;
-    private RecyclerView recyclerview1;
-    private RecyclerView recyclerview2;
-
-    public static Comparar newInstance() {
-        return new Comparar();
-    }
-
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -32,11 +24,5 @@ public class Comparar extends Fragment {
 
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(CompararViewModel.class);
-        // TODO: Use the ViewModel
-    }
 
 }
