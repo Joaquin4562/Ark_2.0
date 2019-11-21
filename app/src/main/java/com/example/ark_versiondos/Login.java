@@ -20,7 +20,6 @@ import java.util.List;
 
 public class Login extends AppCompatActivity {
 
-    private Button abrirMenuPrincipal, abrirRegistro, abrirRecuperar;
     private List<Usuarios> Usuarios = new ArrayList<>();
     private EditText Usuario, Contra;
     private CheckBox Recordar;
@@ -36,10 +35,6 @@ public class Login extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
 
-        abrirMenuPrincipal = (Button) findViewById(R.id.biniciars);
-        abrirRegistro = (Button) findViewById(R.id.bregistrar);
-        abrirRecuperar = (Button) findViewById(R.id.bregistrar);
-
         Usuario = (EditText) findViewById(R.id.usuario);
         Contra = (EditText) findViewById(R.id.contraseña);
 
@@ -51,7 +46,7 @@ public class Login extends AppCompatActivity {
         if (obtener_estado_boton()) {
             Intent abrirPrincipal = new Intent(Login.this, MainActivity.class);
             startActivity(abrirPrincipal);
-            //MainActivity.this.finish();
+            //this.finish();
         }
     }
 
@@ -98,8 +93,7 @@ public class Login extends AppCompatActivity {
             }
             rs.close();
         } catch (Exception e) {
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
-            e.printStackTrace();
+            //Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
 

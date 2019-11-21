@@ -87,4 +87,5 @@
         <item>Lechera</item>
         <item>Carne</item>
     </string-array>
+    <string name="title_activity_mapas">Map</string>
 </resources>

@@ -27,13 +27,14 @@ import java.util.List;
 
 public class Busqueda extends Fragment {
 	private RecyclerView recyclerView;
-	private RecyclerViewAdapter adaptadorRazas;
 	private EditText Busqueda;
 	private Button Buscar, Reset;
 	private Button Vacas, Caballos, Cerdos, Borregos, Pollos;
 	private Spinner Temp, Esp;
 	List<razaVacas> vaca = new ArrayList<>();
 	public static String razas, especie = "Vaca";
+	ResultSet rs;
+	String consulta;
 
 	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View root = inflater.inflate(R.layout.fragment_busqueda, container, false);
@@ -162,35 +163,35 @@ public class Busqueda extends Fragment {
 			switch (especie) {
 				default:
 				case "Vaca":
-					ResultSet rs = new Conexcion().ConsultaBD("Select Raza FROM Vacas WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%'");
+					rs = new Conexcion().ConsultaBD("Select Raza FROM Vacas WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%'");
 					while (rs.next()) {
 						vaca.add(new razaVacas(rs.getString("Raza"), "" + Temp.getSelectedItem().toString() + "",
 								R.drawable.vaca, R.drawable.ic_carne));
 					}
 					break;
 				case "Caballo":
-					 rs = new Conexcion().ConsultaBD("Select Raza FROM Caballos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%'");
+					rs = new Conexcion().ConsultaBD("Select Raza FROM Caballos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%'");
 					while (rs.next()) {
 						vaca.add(new razaVacas(rs.getString("Raza"), "" + Temp.getSelectedItem().toString() + "",
 								R.drawable.vaca, R.drawable.ic_carne));
 					}
 					break;
 				case "Borrego":
-					 rs = new Conexcion().ConsultaBD("Select Raza FROM Borregos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%'");
+					rs = new Conexcion().ConsultaBD("Select Raza FROM Borregos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%'");
 					while (rs.next()) {
 						vaca.add(new razaVacas(rs.getString("Raza"), "" + Temp.getSelectedItem().toString() + "",
 								R.drawable.vaca, R.drawable.ic_carne));
 					}
 					break;
 				case "Cerdo":
-					 rs = new Conexcion().ConsultaBD("Select Raza FROM Cerdos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%'");
+					rs = new Conexcion().ConsultaBD("Select Raza FROM Cerdos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%'");
 					while (rs.next()) {
 						vaca.add(new razaVacas(rs.getString("Raza"), "" + Temp.getSelectedItem().toString() + "",
 								R.drawable.vaca, R.drawable.ic_carne));
 					}
 					break;
 				case "Pollo":
-					 rs = new Conexcion().ConsultaBD("Select Raza FROM Pollos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%'");
+					rs = new Conexcion().ConsultaBD("Select Raza FROM Pollos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%'");
 					while (rs.next()) {
 						vaca.add(new razaVacas(rs.getString("Raza"), "" + Temp.getSelectedItem().toString() + "",
 								R.drawable.vaca, R.drawable.ic_carne));
@@ -206,254 +207,249 @@ public class Busqueda extends Fragment {
 	public List<razaVacas> obtenerVacasDB() {
 		vaca.clear();
 		try {
-			ResultSet rs;
 			switch (especie) {
 				default:
 				case "Vaca":
-					 rs = new Conexcion().ConsultaBD("Select Raza from Vacas");
+					rs = new Conexcion().ConsultaBD("Select Raza from Vacas");
 					while (rs.next()) {
 						vaca.add(new razaVacas(rs.getString("Raza"), "" + Temp.getSelectedItem().toString() + "",
 								R.drawable.vaca, R.drawable.ic_carne));
 					}
 					break;
 				case "Caballo":
-					 rs = new Conexcion().ConsultaBD("Select Raza from Caballos");
+					rs = new Conexcion().ConsultaBD("Select Raza from Caballos");
 					while (rs.next()) {
 						vaca.add(new razaVacas(rs.getString("Raza"), "" + Temp.getSelectedItem().toString() + "",
 								R.drawable.vaca, R.drawable.ic_carne));
 					}
 					break;
 				case "Borrego":
-					 rs = new Conexcion().ConsultaBD("Select Raza from Borregos");
+					rs = new Conexcion().ConsultaBD("Select Raza from Borregos");
 					while (rs.next()) {
 						vaca.add(new razaVacas(rs.getString("Raza"), "" + Temp.getSelectedItem().toString() + "",
 								R.drawable.vaca, R.drawable.ic_carne));
 					}
 					break;
 				case "Cerdo":
-					 rs = new Conexcion().ConsultaBD("Select Raza from Cerdos");
+					rs = new Conexcion().ConsultaBD("Select Raza from Cerdos");
 					while (rs.next()) {
 						vaca.add(new razaVacas(rs.getString("Raza"), "" + Temp.getSelectedItem().toString() + "",
 								R.drawable.vaca, R.drawable.ic_carne));
 					}
 					break;
 				case "Pollo":
-					 rs = new Conexcion().ConsultaBD("Select Raza from Pollos");
+					rs = new Conexcion().ConsultaBD("Select Raza from Pollos");
 					while (rs.next()) {
 						vaca.add(new razaVacas(rs.getString("Raza"), "" + Temp.getSelectedItem().toString() + "",
 								R.drawable.vaca, R.drawable.ic_carne));
 					}
 					break;
 			}
-		}catch(Exception e){
-				Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
-			}
-			return vaca;
+		} catch (Exception e) {
+			//Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
 		}
+		return vaca;
+	}
 
-
-		public List<razaVacas> SoloFiltro () {
-			vaca.clear();
-			String consulta;
-			try {
-				switch (especie) {
-					default:
-					case "Vaca":
-						 consulta = "";
-						if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
-							consulta = "Select Raza FROM Vacas WHERE Temperatura_minima = '" + Temp.getSelectedItem().toString() + "'";
-							if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
-								consulta = "Select Raza FROM Vacas WHERE Temperatura_minima = '" + Temp.getSelectedItem().toString() +
-										"' AND Especialidad= '" + Esp.getSelectedItem().toString() + "'";
-							}
-						} else if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
-							consulta = "Select Raza FROM Vacas WHERE Especialidad = '" + Esp.getSelectedItem().toString() + "'";
-							if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
-								consulta = "Select Raza FROM Vacas WHERE Especialidad = '" + Esp.getSelectedItem().toString() + "' AND " +
-										"Temperatura_minima= '" + Temp.getSelectedItem().toString() + "'";
-							}
+	public List<razaVacas> SoloFiltro() {
+		vaca.clear();
+		try {
+			switch (especie) {
+				default:
+				case "Vaca":
+					consulta = "";
+					if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
+						consulta = "Select Raza FROM Vacas WHERE Temperatura_minima = '" + Temp.getSelectedItem().toString() + "'";
+						if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
+							consulta = "Select Raza FROM Vacas WHERE Temperatura_minima = '" + Temp.getSelectedItem().toString() +
+									"' AND Especialidad= '" + Esp.getSelectedItem().toString() + "'";
 						}
-						break;
-					case "Caballo":
-						consulta = "";
+					} else if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
+						consulta = "Select Raza FROM Vacas WHERE Especialidad = '" + Esp.getSelectedItem().toString() + "'";
 						if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
-							consulta = "Select Raza FROM Caballos WHERE Temperatura_minima = '" + Temp.getSelectedItem().toString() + "'";
-							if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
-								consulta = "Select Raza FROM Caballos WHERE Temperatura_minima = '" + Temp.getSelectedItem().toString() +
-										"' AND Especialidad= '" + Esp.getSelectedItem().toString() + "'";
-							}
-						} else if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
-							consulta = "Select Raza FROM Caballos WHERE Especialidad = '" + Esp.getSelectedItem().toString() + "'";
-							if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
-								consulta = "Select Raza FROM Caballos WHERE Especialidad = '" + Esp.getSelectedItem().toString() + "' AND " +
-										"Temperatura_minima= '" + Temp.getSelectedItem().toString() + "'";
-							}
+							consulta = "Select Raza FROM Vacas WHERE Especialidad = '" + Esp.getSelectedItem().toString() + "' AND " +
+									"Temperatura_minima= '" + Temp.getSelectedItem().toString() + "'";
 						}
-						break;
-					case "Borrego":
-						consulta = "";
-						if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
-							consulta = "Select Raza FROM Borregos WHERE Temperatura_minima = '" + Temp.getSelectedItem().toString() + "'";
-							if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
-								consulta = "Select Raza FROM Borregos WHERE Temperatura_minima = '" + Temp.getSelectedItem().toString() +
-										"' AND Especialidad= '" + Esp.getSelectedItem().toString() + "'";
-							}
-						} else if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
-							consulta = "Select Raza FROM Borregos WHERE Especialidad = '" + Esp.getSelectedItem().toString() + "'";
-							if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
-								consulta = "Select Raza FROM Borregos WHERE Especialidad = '" + Esp.getSelectedItem().toString() + "' AND " +
-										"Temperatura_minima= '" + Temp.getSelectedItem().toString() + "'";
-							}
-						}
-						break;
-					case "Cerdo":
-						consulta = "";
-						if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
-							consulta = "Select Raza FROM Cerdos WHERE Temperatura_minima = '" + Temp.getSelectedItem().toString() + "'";
-							if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
-								consulta = "Select Raza FROM Cerdos WHERE Temperatura_minima = '" + Temp.getSelectedItem().toString() +
-										"' AND Especialidad= '" + Esp.getSelectedItem().toString() + "'";
-							}
-						} else if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
-							consulta = "Select Raza FROM Cerdos WHERE Especialidad = '" + Esp.getSelectedItem().toString() + "'";
-							if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
-								consulta = "Select Raza FROM Cerdos WHERE Especialidad = '" + Esp.getSelectedItem().toString() + "' AND " +
-										"Temperatura_minima= '" + Temp.getSelectedItem().toString() + "'";
-							}
-						}
-						break;
-					case "Pollo":
-						consulta = "";
-						if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
-							consulta = "Select Raza FROM Pollos WHERE Temperatura_minima = '" + Temp.getSelectedItem().toString() + "'";
-							if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
-								consulta = "Select Raza FROM Pollos WHERE Temperatura_minima = '" + Temp.getSelectedItem().toString() +
-										"' AND Especialidad= '" + Esp.getSelectedItem().toString() + "'";
-							}
-						} else if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
-							consulta = "Select Raza FROM Pollos WHERE Especialidad = '" + Esp.getSelectedItem().toString() + "'";
-							if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
-								consulta = "Select Raza FROM Pollos WHERE Especialidad = '" + Esp.getSelectedItem().toString() + "' AND " +
-										"Temperatura_minima= '" + Temp.getSelectedItem().toString() + "'";
-							}
-						}
-						break;
-				}
-					ResultSet rs = new Conexcion().ConsultaBD("" + consulta + "");
-					while (rs.next()) {
-						vaca.add(new razaVacas(rs.getString("Raza"), "" + Temp.getSelectedItem().toString() + "",
-								R.drawable.vaca, R.drawable.ic_carne));
 					}
-
-
-			}catch(Exception e){
-					Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
-				}
-				return vaca;
+					break;
+				case "Caballo":
+					consulta = "";
+					if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
+						consulta = "Select Raza FROM Caballos WHERE Temperatura_minima = '" + Temp.getSelectedItem().toString() + "'";
+						if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
+							consulta = "Select Raza FROM Caballos WHERE Temperatura_minima = '" + Temp.getSelectedItem().toString() +
+									"' AND Especialidad= '" + Esp.getSelectedItem().toString() + "'";
+						}
+					} else if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
+						consulta = "Select Raza FROM Caballos WHERE Especialidad = '" + Esp.getSelectedItem().toString() + "'";
+						if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
+							consulta = "Select Raza FROM Caballos WHERE Especialidad = '" + Esp.getSelectedItem().toString() + "' AND " +
+									"Temperatura_minima= '" + Temp.getSelectedItem().toString() + "'";
+						}
+					}
+					break;
+				case "Borrego":
+					consulta = "";
+					if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
+						consulta = "Select Raza FROM Borregos WHERE Temperatura_minima = '" + Temp.getSelectedItem().toString() + "'";
+						if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
+							consulta = "Select Raza FROM Borregos WHERE Temperatura_minima = '" + Temp.getSelectedItem().toString() +
+									"' AND Especialidad= '" + Esp.getSelectedItem().toString() + "'";
+						}
+					} else if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
+						consulta = "Select Raza FROM Borregos WHERE Especialidad = '" + Esp.getSelectedItem().toString() + "'";
+						if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
+							consulta = "Select Raza FROM Borregos WHERE Especialidad = '" + Esp.getSelectedItem().toString() + "' AND " +
+									"Temperatura_minima= '" + Temp.getSelectedItem().toString() + "'";
+						}
+					}
+					break;
+				case "Cerdo":
+					consulta = "";
+					if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
+						consulta = "Select Raza FROM Cerdos WHERE Temperatura_minima = '" + Temp.getSelectedItem().toString() + "'";
+						if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
+							consulta = "Select Raza FROM Cerdos WHERE Temperatura_minima = '" + Temp.getSelectedItem().toString() +
+									"' AND Especialidad= '" + Esp.getSelectedItem().toString() + "'";
+						}
+					} else if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
+						consulta = "Select Raza FROM Cerdos WHERE Especialidad = '" + Esp.getSelectedItem().toString() + "'";
+						if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
+							consulta = "Select Raza FROM Cerdos WHERE Especialidad = '" + Esp.getSelectedItem().toString() + "' AND " +
+									"Temperatura_minima= '" + Temp.getSelectedItem().toString() + "'";
+						}
+					}
+					break;
+				case "Pollo":
+					consulta = "";
+					if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
+						consulta = "Select Raza FROM Pollos WHERE Temperatura_minima = '" + Temp.getSelectedItem().toString() + "'";
+						if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
+							consulta = "Select Raza FROM Pollos WHERE Temperatura_minima = '" + Temp.getSelectedItem().toString() +
+									"' AND Especialidad= '" + Esp.getSelectedItem().toString() + "'";
+						}
+					} else if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
+						consulta = "Select Raza FROM Pollos WHERE Especialidad = '" + Esp.getSelectedItem().toString() + "'";
+						if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
+							consulta = "Select Raza FROM Pollos WHERE Especialidad = '" + Esp.getSelectedItem().toString() + "' AND " +
+									"Temperatura_minima= '" + Temp.getSelectedItem().toString() + "'";
+						}
+					}
+					break;
+			}
+			rs = new Conexcion().ConsultaBD("" + consulta + "");
+			while (rs.next()) {
+				vaca.add(new razaVacas(rs.getString("Raza"), "" + Temp.getSelectedItem().toString() + "",
+						R.drawable.vaca, R.drawable.ic_carne));
 			}
 
-			public List<razaVacas> FiltroyNombre () {
-				vaca.clear();
-				String consulta;
-				try {
-					switch (especie) {
-						default:
-						case "Vaca":
-							 consulta = "";
-							if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
-								consulta = "Select Raza FROM Vacas WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Temperatura_minima = '" +
-										Temp.getSelectedItem().toString() + "'";
-								if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
-									consulta = "Select Raza FROM Vacas WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Temperatura_minima = '"
-											+ Temp.getSelectedItem().toString() + "' AND Especialidad= '" + Esp.getSelectedItem().toString() + "'";
-								}
-							} else if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
-								consulta = "Select Raza FROM Vacas WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Especialidad = '" + Esp.getSelectedItem().toString() + "'";
-								if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
-									consulta = "Select Raza FROM Vacas WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Especialidad = '" + Esp.getSelectedItem().toString() + "' AND " +
-											"Temperatura_minima= '" + Temp.getSelectedItem().toString() + "'";
-								}
-							}
-							break;
-						case "Caballo":
-							consulta = "";
-							if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
-								consulta = "Select Raza FROM Caballos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Temperatura_minima = '" +
-										Temp.getSelectedItem().toString() + "'";
-								if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
-									consulta = "Select Raza FROM Caballos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Temperatura_minima = '"
-											+ Temp.getSelectedItem().toString() + "' AND Especialidad= '" + Esp.getSelectedItem().toString() + "'";
-								}
-							} else if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
-								consulta = "Select Raza FROM Caballos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Especialidad = '" + Esp.getSelectedItem().toString() + "'";
-								if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
-									consulta = "Select Raza FROM Caballos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Especialidad = '" + Esp.getSelectedItem().toString() + "' AND " +
-											"Temperatura_minima= '" + Temp.getSelectedItem().toString() + "'";
-								}
-							}
-							break;
-						case "Borrego":
-							consulta = "";
-							if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
-								consulta = "Select Raza FROM Borregos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Temperatura_minima = '" +
-										Temp.getSelectedItem().toString() + "'";
-								if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
-									consulta = "Select Raza FROM Borregos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Temperatura_minima = '"
-											+ Temp.getSelectedItem().toString() + "' AND Especialidad= '" + Esp.getSelectedItem().toString() + "'";
-								}
-							} else if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
-								consulta = "Select Raza FROM Borregos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Especialidad = '" + Esp.getSelectedItem().toString() + "'";
-								if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
-									consulta = "Select Raza FROM Borregos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Especialidad = '" + Esp.getSelectedItem().toString() + "' AND " +
-											"Temperatura_minima= '" + Temp.getSelectedItem().toString() + "'";
-								}
-							}
-							break;
-						case "Cerdo":
-							consulta = "";
-							if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
-								consulta = "Select Raza FROM Cerdos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Temperatura_minima = '" +
-										Temp.getSelectedItem().toString() + "'";
-								if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
-									consulta = "Select Raza FROM Cerdos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Temperatura_minima = '"
-											+ Temp.getSelectedItem().toString() + "' AND Especialidad= '" + Esp.getSelectedItem().toString() + "'";
-								}
-							} else if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
-								consulta = "Select Raza FROM Cerdos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Especialidad = '" + Esp.getSelectedItem().toString() + "'";
-								if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
-									consulta = "Select Raza FROM Cerdos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Especialidad = '" + Esp.getSelectedItem().toString() + "' AND " +
-											"Temperatura_minima= '" + Temp.getSelectedItem().toString() + "'";
-								}
-							}
-							break;
-						case "Pollo":
-							consulta = "";
-							if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
-								consulta = "Select Raza FROM Pollos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Temperatura_minima = '" +
-										Temp.getSelectedItem().toString() + "'";
-								if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
-									consulta = "Select Raza FROM Pollos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Temperatura_minima = '"
-											+ Temp.getSelectedItem().toString() + "' AND Especialidad= '" + Esp.getSelectedItem().toString() + "'";
-								}
-							} else if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
-								consulta = "Select Raza FROM Pollos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Especialidad = '" + Esp.getSelectedItem().toString() + "'";
-								if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
-									consulta = "Select Raza FROM Pollos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Especialidad = '" + Esp.getSelectedItem().toString() + "' AND " +
-											"Temperatura_minima= '" + Temp.getSelectedItem().toString() + "'";
-								}
-							}
-							break;
-					}
-						ResultSet rs = new Conexcion().ConsultaBD("" + consulta + "");
-						while (rs.next()) {
-							vaca.add(new razaVacas(rs.getString("Raza"), "" + Temp.getSelectedItem().toString() + "",
-									R.drawable.vaca, R.drawable.ic_carne));
+		} catch (Exception e) {
+			Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
+		}
+		return vaca;
+	}
+
+	public List<razaVacas> FiltroyNombre() {
+		vaca.clear();
+		try {
+			switch (especie) {
+				default:
+				case "Vaca":
+					consulta = "";
+					if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
+						consulta = "Select Raza FROM Vacas WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Temperatura_minima = '" +
+								Temp.getSelectedItem().toString() + "'";
+						if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
+							consulta = "Select Raza FROM Vacas WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Temperatura_minima = '"
+									+ Temp.getSelectedItem().toString() + "' AND Especialidad= '" + Esp.getSelectedItem().toString() + "'";
 						}
-
-				}catch(Exception e){
-						Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
+					} else if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
+						consulta = "Select Raza FROM Vacas WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Especialidad = '" + Esp.getSelectedItem().toString() + "'";
+						if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
+							consulta = "Select Raza FROM Vacas WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Especialidad = '" + Esp.getSelectedItem().toString() + "' AND " +
+									"Temperatura_minima= '" + Temp.getSelectedItem().toString() + "'";
+						}
 					}
-					return vaca;
-				}
-
+					break;
+				case "Caballo":
+					consulta = "";
+					if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
+						consulta = "Select Raza FROM Caballos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Temperatura_minima = '" +
+								Temp.getSelectedItem().toString() + "'";
+						if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
+							consulta = "Select Raza FROM Caballos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Temperatura_minima = '"
+									+ Temp.getSelectedItem().toString() + "' AND Especialidad= '" + Esp.getSelectedItem().toString() + "'";
+						}
+					} else if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
+						consulta = "Select Raza FROM Caballos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Especialidad = '" + Esp.getSelectedItem().toString() + "'";
+						if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
+							consulta = "Select Raza FROM Caballos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Especialidad = '" + Esp.getSelectedItem().toString() + "' AND " +
+									"Temperatura_minima= '" + Temp.getSelectedItem().toString() + "'";
+						}
+					}
+					break;
+				case "Borrego":
+					consulta = "";
+					if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
+						consulta = "Select Raza FROM Borregos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Temperatura_minima = '" +
+								Temp.getSelectedItem().toString() + "'";
+						if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
+							consulta = "Select Raza FROM Borregos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Temperatura_minima = '"
+									+ Temp.getSelectedItem().toString() + "' AND Especialidad= '" + Esp.getSelectedItem().toString() + "'";
+						}
+					} else if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
+						consulta = "Select Raza FROM Borregos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Especialidad = '" + Esp.getSelectedItem().toString() + "'";
+						if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
+							consulta = "Select Raza FROM Borregos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Especialidad = '" + Esp.getSelectedItem().toString() + "' AND " +
+									"Temperatura_minima= '" + Temp.getSelectedItem().toString() + "'";
+						}
+					}
+					break;
+				case "Cerdo":
+					consulta = "";
+					if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
+						consulta = "Select Raza FROM Cerdos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Temperatura_minima = '" +
+								Temp.getSelectedItem().toString() + "'";
+						if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
+							consulta = "Select Raza FROM Cerdos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Temperatura_minima = '"
+									+ Temp.getSelectedItem().toString() + "' AND Especialidad= '" + Esp.getSelectedItem().toString() + "'";
+						}
+					} else if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
+						consulta = "Select Raza FROM Cerdos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Especialidad = '" + Esp.getSelectedItem().toString() + "'";
+						if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
+							consulta = "Select Raza FROM Cerdos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Especialidad = '" + Esp.getSelectedItem().toString() + "' AND " +
+									"Temperatura_minima= '" + Temp.getSelectedItem().toString() + "'";
+						}
+					}
+					break;
+				case "Pollo":
+					consulta = "";
+					if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
+						consulta = "Select Raza FROM Pollos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Temperatura_minima = '" +
+								Temp.getSelectedItem().toString() + "'";
+						if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
+							consulta = "Select Raza FROM Pollos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Temperatura_minima = '"
+									+ Temp.getSelectedItem().toString() + "' AND Especialidad= '" + Esp.getSelectedItem().toString() + "'";
+						}
+					} else if (!Esp.getSelectedItem().toString().equals("Especialidad")) {
+						consulta = "Select Raza FROM Pollos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Especialidad = '" + Esp.getSelectedItem().toString() + "'";
+						if (!Temp.getSelectedItem().toString().equals("Temperatura")) {
+							consulta = "Select Raza FROM Pollos WHERE Raza LIKE '%" + Busqueda.getText().toString() + "%' AND Especialidad = '" + Esp.getSelectedItem().toString() + "' AND " +
+									"Temperatura_minima= '" + Temp.getSelectedItem().toString() + "'";
+						}
+					}
+					break;
 			}
+			rs = new Conexcion().ConsultaBD("" + consulta + "");
+			while (rs.next()) {
+				vaca.add(new razaVacas(rs.getString("Raza"), "" + Temp.getSelectedItem().toString() + "",
+						R.drawable.vaca, R.drawable.ic_carne));
+			}
+
+		} catch (Exception e) {
+			Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
+		}
+		return vaca;
+	}
+
+}

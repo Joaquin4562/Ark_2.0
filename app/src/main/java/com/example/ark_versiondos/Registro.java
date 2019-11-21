@@ -30,10 +30,11 @@ public class Registro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_registro);
 
         regis = (Button) findViewById(R.id.registrarse);
+
         NUsuario = (EditText) findViewById(R.id.rcusuario);
         Nombre = (EditText) findViewById(R.id.rcnombre);
         Ciudad = (EditText) findViewById(R.id.rciudad);
@@ -42,32 +43,45 @@ public class Registro extends AppCompatActivity {
         Telefono = (EditText) findViewById(R.id.rctelefono);
         Contra = (EditText) findViewById(R.id.rcontraseña);
         ConfContra = (EditText) findViewById(R.id.rrecucontraseña);
-        Conexcion o= new Conexcion();
-        conexion= o.conexionBd();
+
+        Conexcion o = new Conexcion();
+        conexion = o.conexionBd();
     }
 
-    public void Reg (View v){
+    public void Reg(View v) {
         ejecutarConsulta(conexion);
         bol = false;
         vars();
-        for(int i = 0; i < Usuarios.size(); i++) {
-            if(nusuario.equals(Usuarios.get(i).getNUsuario())) {
-                bol = true;
-                Toast.makeText(this,"Nombre de usuario ocupado",Toast.LENGTH_LONG).show();
-                break;
+        if (!NUsuario.getText().toString().equalsIgnoreCase("") &&
+                !Nombre.getText().toString().equalsIgnoreCase("") &&
+                !Ciudad.getText().toString().equalsIgnoreCase("") &&
+                !Estado.getText().toString().equalsIgnoreCase("") &&
+                !Correo.getText().toString().equalsIgnoreCase("") &&
+                !Telefono.getText().toString().equalsIgnoreCase("") &&
+                !Contra.getText().toString().equalsIgnoreCase("") &&
+                !ConfContra.getText().toString().equalsIgnoreCase("")) {
+            for (int i = 0; i < Usuarios.size(); i++) {
+                if (nusuario.equals(Usuarios.get(i).getNUsuario())) {
+                    bol = true;
+                    Toast.makeText(this, "Nombre de usuario ocupado", Toast.LENGTH_LONG).show();
+                    break;
+                }
+                if (correo.equals(Usuarios.get(i).getCorreo())) {
+                    bol = true;
+                    Toast.makeText(this, "Correo ya existente", Toast.LENGTH_LONG).show();
+                    break;
+                }
+                if (!contra.equals(confcontra)) {
+                    bol = true;
+                    Toast.makeText(this, "La contraseña no fue confirmada correctamente", Toast.LENGTH_LONG).show();
+                    break;
+                }
             }
-            if( correo.equals(Usuarios.get(i).getCorreo())) {
-                bol = true;
-                Toast.makeText(this,"Correo ya existente",Toast.LENGTH_LONG).show();
-                break;
-            }
-            if(!contra.equals(confcontra)){
-                bol = true;
-                Toast.makeText(this,"La contraseña no fue confirmada correctamente",Toast.LENGTH_LONG).show();
-                break;
-            }
+        } else {
+            bol = true;
+            Toast.makeText(this, "Llena los campos porfavor", Toast.LENGTH_LONG).show();
         }
-        if (!bol){
+        if (!bol) {
             try {
                 Usuarios.clear();
                 String SQL = "INSERT INTO Usuarios VALUES ('" + nusuario + "', '" + nombre + "', '" + ciudad + "', '"
@@ -75,15 +89,15 @@ public class Registro extends AppCompatActivity {
                 Statement stmt = conexion.createStatement();
                 int count = stmt.executeUpdate(SQL);
                 stmt.close();
-                Toast.makeText(this,"Registro creado exitosamente!",Toast.LENGTH_LONG).show();
-            }catch(Exception Ex){
+                Toast.makeText(this, "Registro creado exitosamente!", Toast.LENGTH_LONG).show();
+            } catch (Exception Ex) {
                 Toast.makeText(this, Ex.getMessage(), Toast.LENGTH_LONG).show();
             }
             CamPant(v);
         }
     }
 
-    public void vars(){
+    public void vars() {
         nombre = Nombre.getText().toString();
         nusuario = NUsuario.getText().toString();
         ciudad = Ciudad.getText().toString();
@@ -97,10 +111,10 @@ public class Registro extends AppCompatActivity {
     public void ejecutarConsulta(Connection con) {
         try {
             String arreglo[];
-            String linea="";
+            String linea = "";
             String SQL = "SELECT NUsuario, Correo FROM Usuarios";
-            Conexcion ob=new Conexcion();
-            ResultSet rs= ob.ConsultaBD(SQL);
+            Conexcion ob = new Conexcion();
+            ResultSet rs = ob.ConsultaBD(SQL);
             while (rs.next()) {
                 linea = rs.getString("NUsuario") + "," + rs.getString("Correo");
                 arreglo = linea.split(",");
@@ -115,7 +129,7 @@ public class Registro extends AppCompatActivity {
     }
 
     public void CamPant(View v) {
-        Intent regis = new Intent(Registro.this,Login.class);
+        Intent regis = new Intent(Registro.this, Login.class);
         startActivity(regis);
     }
 }
