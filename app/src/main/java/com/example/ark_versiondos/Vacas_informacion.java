@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,12 +16,16 @@ import com.example.ark_versiondos.ui.home.Busqueda;
 import com.example.ark_versiondos.ui.home.Comparar;
 
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Vacas_informacion extends AppCompatActivity {
 
-    private Button Comparar;
-    TextView Raza, TempMax, TempMin, Longevidad, PesoPromedio, LitrosLeche, Crias, Enfermedades, Especialidad, Gestacion, CalidadLeche, PropiedadesLeche, Temperamento, TipodeCuero;
-    ResultSet rs;
+    //private List<Vaca> Usuarios = new ArrayList<>();
+    private TextView Raza, TempMax, TempMin, Longevidad, PesoPromedio, LitrosLeche, Crias,
+            Enfermedades, Especialidad, Gestacion, CalidadLeche, PropiedadesLeche, Temperamento, TipodeCuero;
+    private TextView Animal;
+    private ImageView animalImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +34,11 @@ public class Vacas_informacion extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_vacas_informacion);
 
-        Comparar = findViewById(R.id.bComparar);
-
         Raza = findViewById(R.id.raza);
-        TempMax = findViewById(R.id.tempmax);
-        TempMin = findViewById(R.id.tempmin);
+        TempMax = findViewById(R.id.tempMaxima);
+        TempMin = findViewById(R.id.tempMinima);
         Longevidad = findViewById(R.id.longevidad);
-        PesoPromedio = findViewById(R.id.pesoP);
+        PesoPromedio = findViewById(R.id.peso);
         LitrosLeche = findViewById(R.id.litrosLeche);
         Crias = findViewById(R.id.crias);
         Enfermedades = findViewById(R.id.enfermedades);
@@ -46,34 +49,36 @@ public class Vacas_informacion extends AppCompatActivity {
         Temperamento = findViewById(R.id.temperamento);
         TipodeCuero = findViewById(R.id.cuerpo);
 
-        ObtenerVaca();
+        Animal = findViewById(R.id.tvAnimal);
+        animalImage = findViewById(R.id.image);
 
-        Comparar.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Pant_Comp(view);
-            }
-        });
-
+        ObtenerAnimal();
     }
 
-    public void ObtenerVaca() {
+    public void ObtenerAnimal() {
         try {
+            ResultSet rs = null;
+            Animal.setText(Busqueda.especie);
             Conexcion ob = new Conexcion();
             switch (Busqueda.especie) {
                 case "Vaca":
+                    //animalImage.setImageDrawable();
                     rs = ob.ConsultaBD("Select * from Vacas where Raza='" + Busqueda.razas + "'");
                     break;
                 case "Caballo":
+                    //animalImage.setImageDrawable();
                     rs = ob.ConsultaBD("Select * from Caballos where Raza='" + Busqueda.razas + "'");
                     break;
                 case "Borrego":
+                    //animalImage.setImageDrawable();
                     rs = ob.ConsultaBD("Select * from Borregos where Raza='" + Busqueda.razas + "'");
                     break;
                 case "Cerdo":
+                    //animalImage.setImageDrawable();
                     rs = ob.ConsultaBD("Select * from Cerdos where Raza='" + Busqueda.razas + "'");
                     break;
                 case "Pollo":
+                    //animalImage.setImageDrawable();
                     rs = ob.ConsultaBD("Select * from Pollos where Raza='" + Busqueda.razas + "'");
                     break;
             }
@@ -82,10 +87,10 @@ public class Vacas_informacion extends AppCompatActivity {
                     switch (Busqueda.especie) {
                         case "Vaca":
                             Raza.setText(rs.getString("Raza"));
-                            PesoPromedio.setText(rs.getString("Peso_Promedio"));
                             Longevidad.setText(rs.getString("Longevidad"));
                             TempMin.setText(rs.getString("Temperatura_minima"));
                             TempMax.setText(rs.getString("Temperatura_maxima"));
+                            PesoPromedio.setText(rs.getString("Peso_Promedio"));
                             LitrosLeche.setText(rs.getString("Litros_de_leche_al_año"));
                             Crias.setText(rs.getString("Crias_en_vida_productiva"));
                             Enfermedades.setText(rs.getString("Enfermedades_propensas"));
@@ -94,33 +99,49 @@ public class Vacas_informacion extends AppCompatActivity {
                             CalidadLeche.setText(rs.getString("Calidad_de_leche"));
                             PropiedadesLeche.setText(rs.getString("Propiedades_de_la_leche"));
                             Temperamento.setText(rs.getString("Temperamento"));
-                            TipodeCuero.setText(rs.getString("Tipo_de_cuero"));
+                            TipodeCuero.setText(rs.getString("Tipo_de_Cuero"));
                             break;
                         case "Caballo":
-                            //ResultSet rs= ob.ConsultaBD("Select * from Caballos where Raza='"+Busqueda.razas+"'");
+                            Raza.setText(rs.getString("raza"));
+                            Longevidad.setText(rs.getString("Longevidad"));
+                            TempMin.setText(rs.getString("Peso_Promedio"));
+                            TempMax.setText(rs.getString("Calidad_de_fisico"));
+                            PesoPromedio.setText(rs.getString("Enfermedades_propensas"));
+                            LitrosLeche.setText(rs.getString("Temperamento"));
+                            Crias.setText(rs.getString("Crias_en_vida_productiva"));
+                            Enfermedades.setText(rs.getString("Resistencia"));
                             break;
                         case "Borrego":
                             //ResultSet rs= ob.ConsultaBD("Select * from Borregos where Raza='"+Busqueda.razas+"'");
                             break;
                         case "Cerdo":
-                            //ResultSet rs= ob.ConsultaBD("Select * from Cerdos where Raza='"+Busqueda.razas+"'");
+                            Raza.setText(rs.getString("raza"));
+                            Longevidad.setText(rs.getString("Longevidad"));
+                            TempMin.setText(rs.getString("Peso_Promedio"));
+                            TempMax.setText(rs.getString("Calidad_de_su_carne"));
+                            PesoPromedio.setText(rs.getString("Enfermedades_propensas"));
+                            LitrosLeche.setText(rs.getString("Temperamento"));
+                            Crias.setText(rs.getString("Crias_en_vida_productiva"));
                             break;
                         case "Pollo":
-                            //ResultSet rs= ob.ConsultaBD("Select * from Pollos where Raza='"+Busqueda.razas+"'");
+                            Raza.setText(rs.getString("raza"));
+                            Longevidad.setText(rs.getString("Longevidad"));
+                            TempMin.setText(rs.getString("Peso_promedio"));
+                            TempMax.setText(rs.getString("Calidad_de_la_carne"));
+                            PesoPromedio.setText(rs.getString("Enfermedades_propensas"));
+                            LitrosLeche.setText(rs.getString("Temperamento"));
+                            Crias.setText(rs.getString("Crias_en_vida_productiva"));
+                            Enfermedades.setText(rs.getString("Resistencia_al_clima"));
+                            Especialidad.setText(rs.getString("Cantidad_de_huevos_al_año"));
+                            Gestacion.setText(rs.getString("Especialidad"));
                             break;
                     }
                 }
             }
+            rs.close();
         } catch (Exception e) {
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
-            Toast.makeText(this, Busqueda.especie, Toast.LENGTH_LONG).show();
 
         }
-    }
-
-    public void Pant_Comp(View v) {
-        Intent abrirPrincipal = new Intent(Vacas_informacion.this,Comparar.class);
-        startActivity(abrirPrincipal);
-        this.finish();
     }
 }

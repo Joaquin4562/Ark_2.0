@@ -19,7 +19,6 @@ import java.util.List;
 
 public class Registro extends AppCompatActivity {
 
-    private Button regis;
     private EditText NUsuario, Nombre, Ciudad, Estado, Correo, Telefono, Contra, ConfContra;
     private String nusuario, nombre, ciudad, estado, correo, telefono, contra, confcontra;
     private Connection conexion = null;
@@ -33,7 +32,7 @@ public class Registro extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_registro);
 
-        regis = (Button) findViewById(R.id.registrarse);
+        Button regis = (Button) findViewById(R.id.registrarse);
 
         NUsuario = (EditText) findViewById(R.id.rcusuario);
         Nombre = (EditText) findViewById(R.id.rcnombre);
@@ -97,7 +96,7 @@ public class Registro extends AppCompatActivity {
         }
     }
 
-    public void vars() {
+    private void vars() {
         nombre = Nombre.getText().toString();
         nusuario = NUsuario.getText().toString();
         ciudad = Ciudad.getText().toString();
@@ -108,7 +107,7 @@ public class Registro extends AppCompatActivity {
         confcontra = ConfContra.getText().toString();
     }
 
-    public void ejecutarConsulta(Connection con) {
+    private void ejecutarConsulta(Connection con) {
         try {
             String arreglo[];
             String linea = "";
@@ -128,7 +127,7 @@ public class Registro extends AppCompatActivity {
         }
     }
 
-    public void CamPant(View v) {
+    private void CamPant(View v) {
         Intent regis = new Intent(Registro.this, Login.class);
         startActivity(regis);
     }

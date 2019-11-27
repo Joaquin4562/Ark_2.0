@@ -80,17 +80,17 @@ public class Recuperar extends AppCompatActivity {
         properties.put("mail.smtp.port", "465");
 
         try{
-            session= javax.mail.Session.getDefaultInstance(properties, new Authenticator() {
+            session= Session.getDefaultInstance(properties, new Authenticator() {
                 @Override
                 protected PasswordAuthentication getPasswordAuthentication() {
                     return new PasswordAuthentication(correo, contraseña);
                 }
             });
             if (session!=null){
-                javax.mail.Message message = new MimeMessage(session);
+                Message message = new MimeMessage(session);
                 message.setFrom(new InternetAddress(correo));
                 message.setSubject("RECUPERACION DE CONTRASEÑA");
-                message.setRecipients(javax.mail.Message.RecipientType.TO, InternetAddress.parse(""+Correo.getText().toString()+""));
+                message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(""+Correo.getText().toString()+""));
                 message.setText("Este correo es en efecto de recuperación de contraseña\n" +
                         "Su contraseña es: \""+conR+"\"");
                 Transport.send(message);
@@ -110,7 +110,6 @@ public class Recuperar extends AppCompatActivity {
             String arreglo[];
             String linea;
             String SQL = "SELECT Correo, Contraseña FROM Usuarios";
-
             ResultSet rs = new Conexcion().ConsultaBD(SQL);
             while (rs.next()) {
                 linea = rs.getString("Correo") + "," + rs.getString("Contraseña");

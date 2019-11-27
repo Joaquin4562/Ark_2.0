@@ -12,13 +12,11 @@
         <item
             android:id="@+id/nav_busqueda"
             android:icon="@drawable/ic_search"
-            android:title="@string/menu_Busqueda"
-            />
+            android:title="@string/menu_Busqueda" />
         <item
             android:id="@+id/nav_comparar"
             android:icon="@drawable/ic_compare"
-            android:title="@string/menu_Comparar"
-            />
+            android:title="@string/menu_Comparar" />
 
     </group>
 
@@ -27,23 +25,19 @@
             <item
                 android:id="@+id/nav_perfil"
                 android:icon="@drawable/ic_person_black"
-                android:title="@string/menu_perfil"
-                />
+                android:title="@string/menu_perfil" />
             <item
                 android:id="@+id/nav_galeria"
                 android:icon="@drawable/ic_image"
-                android:title="@string/menu_Galeria"
-                />
+                android:title="@string/menu_Galeria" />
             <item
                 android:id="@+id/nav_cerrar"
                 android:icon="@drawable/ic_close"
-                android:title="Cerrar sesión"
-                />
+                android:title="Cerrar sesión" />
             <item
                 android:id="@+id/nav_more"
                 android:icon="@drawable/ic_more"
-                android:title="Acerca de"
-                />
+                android:title="Acerca de" />
         </menu>
     </item>
 

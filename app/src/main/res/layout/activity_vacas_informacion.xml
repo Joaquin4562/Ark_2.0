@@ -24,10 +24,10 @@
             app:layout_constraintVertical_bias="0.37" />
 
         <TextView
-            android:id="@+id/etNombreAnimal"
+            android:id="@+id/tvAnimal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/simbrah"
+            android:text="@string/animal"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/scrollView3"
             app:layout_constraintEnd_toEndOf="parent"
@@ -35,32 +35,16 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.94" />
 
-        <Button
-            android:id="@+id/bComparar"
-            android:layout_width="277dp"
-            android:layout_height="49dp"
-            android:layout_margin="20dp"
-            android:background="@drawable/fbotoni"
-            android:text="@string/menu_Comparar"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.96" />
-
         <ScrollView
             android:id="@+id/scrollView3"
             android:layout_width="319dp"
-            android:layout_height="329dp"
+            android:layout_height="350dp"
             android:background="@drawable/ftextoii"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.63">
+            app:layout_constraintVertical_bias="0.75">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -98,22 +82,7 @@
                     android:text="@string/tvlongevidad" />
 
                 <TextView
-                    android:id="@+id/ttempMaxima"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/temperatura_maxima"
-                    android:textSize="16sp"
-                    android:textStyle="bold|italic" />
 
-                <TextView
-                    android:id="@+id/tempMaxima"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:text="@string/tvtempmaxima" />
-
-                <TextView
-                    android:id="@+id/ttempMinima"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/temperatura_minima"
@@ -128,7 +97,20 @@
                     android:text="@string/tvtempminima" />
 
                 <TextView
-                    android:id="@+id/tpeso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/temperatura_maxima"
+                    android:textSize="16sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:id="@+id/tempMaxima"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/tvtempmaxima" />
+
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/peso_promedio"
@@ -143,7 +125,6 @@
                     android:text="@string/tvpeso" />
 
                 <TextView
-                    android:id="@+id/tlitrosLeche"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/litros_de_leche_al_a_o"
@@ -158,7 +139,6 @@
                     android:text="@string/tvlitros" />
 
                 <TextView
-                    android:id="@+id/tcrias"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/crias_de_vida_productiva"
@@ -173,7 +153,6 @@
                     android:text="@string/tvcrias" />
 
                 <TextView
-                    android:id="@+id/tenfermedades"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/enfermedades_propensas"
@@ -188,7 +167,6 @@
                     android:text="@string/tvenfermedades" />
 
                 <TextView
-                    android:id="@+id/tespecialidad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/especialidad"
@@ -203,7 +181,6 @@
                     android:text="@string/tvespecialidad" />
 
                 <TextView
-                    android:id="@+id/tperiodoGestacion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/periodo_de_gestaci_n"
@@ -218,7 +195,6 @@
                     android:text="@string/tvgestacion" />
 
                 <TextView
-                    android:id="@+id/tcalidadLeche"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/calidad_de_leche"
@@ -233,7 +209,6 @@
                     android:text="@string/tvcantleche" />
 
                 <TextView
-                    android:id="@+id/tpropiedadesLeche"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/propiedades_de_la_leche"
@@ -248,7 +223,6 @@
                     android:text="@string/tvpropsleche" />
 
                 <TextView
-                    android:id="@+id/ttemperamento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/temperamento"
@@ -263,7 +237,6 @@
                     android:text="@string/tvtemperamento" />
 
                 <TextView
-                    android:id="@+id/tcuerpo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/tipo_de_cuerpo"

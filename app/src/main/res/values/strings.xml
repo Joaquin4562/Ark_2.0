@@ -88,4 +88,8 @@
         <item>Carne</item>
     </string-array>
     <string name="title_activity_mapas">Map</string>
+    <string name="animal">Animal</string>
+    <string name="guardar">Guardar</string>
+    <string name="informaci_n_del_usuario">Información del usuario</string>
+    <string name="selecciona_el_animal">Selecciona el animal</string>
 </resources>

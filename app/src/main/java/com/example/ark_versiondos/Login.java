@@ -2,6 +2,7 @@ package com.example.ark_versiondos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
@@ -22,11 +23,11 @@ public class Login extends AppCompatActivity {
 
     private List<Usuarios> Usuarios = new ArrayList<>();
     private EditText Usuario, Contra;
-    private CheckBox Recordar;
+    private  CheckBox Recordar;
     boolean bol=false;
     private Connection conexion = null;
-    private static  final String PREFS_KEY = "tu_contexto";
-    private static  final String ESTADO_BOTON = "estado.boton";
+    private static final String PREFS_KEY = "preferencia";
+    private static final String ESTADO_BOTON = "estado.boton";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +47,7 @@ public class Login extends AppCompatActivity {
         if (obtener_estado_boton()) {
             Intent abrirPrincipal = new Intent(Login.this, MainActivity.class);
             startActivity(abrirPrincipal);
-            //this.finish();
+            this.finish();
         }
     }
 
@@ -69,18 +70,23 @@ public class Login extends AppCompatActivity {
         }
     }
 
-    public void guardar_estado_boton() {
+    public static void cambiar_estado(Context c, boolean b){
+        SharedPreferences settings = c.getSharedPreferences(PREFS_KEY, MODE_PRIVATE);
+        settings.edit().putBoolean(ESTADO_BOTON, b).apply();
+    }
+
+    private void guardar_estado_boton() {
         SharedPreferences settings = getSharedPreferences(PREFS_KEY, MODE_PRIVATE);
         settings.edit().putBoolean(ESTADO_BOTON,Recordar.isChecked()).apply();
     }
 
-    public boolean obtener_estado_boton(){
+    private boolean obtener_estado_boton(){
         SharedPreferences settings = getSharedPreferences(PREFS_KEY, MODE_PRIVATE);
         return settings.getBoolean(ESTADO_BOTON,false);
 
     }
 
-    public void ejecutarConsulta(Connection con) {
+    private void ejecutarConsulta(Connection con) {
         try {
             String arreglo[];
             String linea;
@@ -97,7 +103,7 @@ public class Login extends AppCompatActivity {
         }
     }
 
-    public void Acceder_P(View v) {
+    private void Acceder_P(View v) {
         Intent abrirPrincipal = new Intent(Login.this,MainActivity.class);
         startActivity(abrirPrincipal);
     }

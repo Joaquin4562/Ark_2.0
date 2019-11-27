@@ -24,9 +24,98 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="89dp"
+                    android:layout_marginTop="10dp">
+
+                    <HorizontalScrollView
+                        android:id="@+id/horizontalScrollView"
+                        android:layout_width="404dp"
+                        android:layout_height="87dp"
+                        android:background="#F5F5F5"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.047">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="#F5F5F5"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="5dp">
+
+                            <Button
+                                android:id="@+id/Vacas"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/round"
+                                android:drawablePadding="40dp"
+                                android:drawableTintMode="src_in"
+                                android:foreground="@drawable/ic_vaca"
+                                android:foregroundTint="#001B3A04"
+                                android:foregroundTintMode="add" />
+
+                            <Button
+                                android:id="@+id/Borregos"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/round"
+                                android:drawablePadding="40dp"
+                                android:foreground="@drawable/ic_oveja"
+                                android:foregroundTint="#001B3A04"
+                                android:foregroundTintMode="add" />
+
+                            <Button
+                                android:id="@+id/Cerdos"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/round"
+                                android:drawablePadding="40dp"
+                                android:foreground="@drawable/ic_cerdo"
+                                android:foregroundTint="#001B3A04"
+                                android:foregroundTintMode="add" />
+
+                            <Button
+                                android:id="@+id/Caballos"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/round"
+                                android:drawablePadding="40dp"
+                                android:foreground="@drawable/ic_caballo"
+                                android:foregroundTint="#001B3A04"
+                                android:foregroundTintMode="add" />
+
+                            <Button
+                                android:id="@+id/Pollos"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_margin="5dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/round"
+                                android:drawablePadding="40dp"
+                                android:foreground="@drawable/ic_gallina"
+                                android:foregroundTint="#001B3A04"
+                                android:foregroundTintMode="add" />
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
                     android:orientation="horizontal">
 
                     <SearchView
@@ -43,46 +132,10 @@
 
                 </LinearLayout>
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp">
-
-                    <Button
-                        android:id="@+id/bBuscarPrim"
-                        android:layout_width="126dp"
-                        android:layout_height="34dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/fbotoni"
-                        android:text="Buscar"
-                        android:textAllCaps="false"
-                        android:textColor="#FFFFFF"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.133"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <Button
-                        android:id="@+id/bBuscarSeg"
-                        android:layout_width="126dp"
-                        android:layout_height="34dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/fbotoni"
-                        android:text="Buscar"
-                        android:textAllCaps="false"
-                        android:textColor="#FFFFFF"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.89"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.555" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/ftextoi"
                     android:orientation="horizontal">
 
@@ -97,29 +150,10 @@
                         android:layout_height="match_parent" />
                 </LinearLayout>
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="77dp">
-
-                    <Button
-                        android:id="@+id/bComparar"
-                        android:layout_width="220dp"
-                        android:layout_height="44dp"
-                        android:background="@drawable/fbotoni"
-                        android:fontFamily="sans-serif"
-                        android:selectAllOnFocus="false"
-                        android:text="@string/menu_Comparar"
-                        android:textAllCaps="false"
-                        android:textColor="#FFFFFF"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -176,7 +210,6 @@
                                         android:orientation="vertical">
 
                                         <TextView
-                                            android:id="@+id/raza"
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:layout_marginStart="10dp"
@@ -533,7 +566,6 @@
                                             android:textStyle="bold" />
 
                                         <TextView
-                                            android:id="@+id/calidadLeche2"
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
                                             android:layout_marginStart="10dp"
